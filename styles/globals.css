@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Dark Mode Utility */
+@layer utilities {
+  @variants dark {
+    .bg-dark {
+      background: #070c17db; /* Dark background */
+      backdrop-filter: blur(3px); /* Blurred background */
+    }
+  }
+}
+
+/* Ensure smooth scrolling for all pages */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove scrollbar in textareas */
+textarea::-webkit-scrollbar {
+  width: 0; /* No scrollbar */
+}
+
+/* Webkit Scrollbar */
+::-webkit-scrollbar {
+  width: 8px; /* Scrollbar width */
+  height: 8px; /* Scrollbar height */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; /* Transparent scrollbar track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #6264f3 !important; /* Purple handle */
+  border-radius: 5px !important; /* Rounded handle */
+}
+
+/* Remove outline when a button is focused */
+button:focus {
+  outline: 0 !important;
+}
+
+/* Hide Table of Contents (TOC) for screens smaller than 1180px */
+@media (max-width: 1180px) {
+  .toc {
+    display: none; /* Hide TOC */
+  }
+}
+
+/* Limit TOC inner height */
+.toc-inner {
+  max-height: calc(100vh - 25vh); /* Make the TOC inner scrollable */
+}
+
+/* Dropdown menu behavior on hover */
+.dropdown:hover .dropdown-menu {
+  display: block; /* Show dropdown menu on hover */
+}
+
+/* Additional recommendations for cross-browser compatibility */
+@supports (--css: variables) {
+  /* Add additional styles for browsers that support CSS variables (optional) */
+}
